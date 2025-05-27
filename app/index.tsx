@@ -1,21 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Pressable } from 'react-native';
+import FruitList from '../components/list';
 
 export default function App() {
   let sampleList = [
-    {id: 1, name: "Josh"},
-    {id: 2, name: "Thomas"},
-    {id: 3, name: "Kishan"},
-    {id: 4, name: "Mayur"},
+    {id: 1, name: "Apple"},
+    {id: 2, name: "Mango"},
+    {id: 3, name: "Orange"},
   ];
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      {sampleList.map((item)=> (
-        <Text key={item.id} style={{fontSize: 20}}>
-          {item.name}
-        </Text>
-      ))}
+      <Text>Welcome to our app!</Text>
       <Button title ="Hello There" onPress={()=> alert ("You are done with the lab")} />
       <StatusBar style="auto" />
     </View>
