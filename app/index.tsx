@@ -1,8 +1,12 @@
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Pressable } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import FruitList from '../components/list';
+import { useRouter } from "expo-router";
 
 export default function App() {
+
+const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Text>Welcome to our app!</Text>
@@ -10,6 +14,9 @@ export default function App() {
       
       <Text style={styles.listTitle}>Choose a fruit:</Text>
       <FruitList />
+      <Pressable onPress={() => router.push(`/lab3`)}>
+        <Text style={styles.listTitle}>Lab 3</Text>
+      </Pressable>
       
       <StatusBar style="auto" />
     </View>
