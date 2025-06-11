@@ -22,19 +22,15 @@ const styles = StyleSheet.create({
     color: 'blue'
   },
   button: {
-        backgroundColor: '#e74c3c', // Red color for the decrement button
-        paddingVertical: 15, // Vertical padding
-        paddingHorizontal: 25, // Horizontal padding
-        borderRadius: 30, // Make the button rounded (pill shape)
-        alignItems: 'center', // Center text horizontally
-        justifyContent: 'center', // Center text vertically
-        minWidth: 80, // Minimum width for a good touch target
-        shadowColor: '#000', // Shadow for the button
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 5, 
-        margin: 10// Android shadow
+        backgroundColor: '#e74c3c', 
+        paddingVertical: 15,
+        paddingHorizontal: 25,
+        borderRadius: 30, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        minWidth: 80,
+        
+        margin: 10
     },
 });
 
