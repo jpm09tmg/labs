@@ -17,6 +17,9 @@ const router = useRouter();
       <Pressable onPress={() => router.push(`/lab3`)}>
         <Text style={styles.listTitle}>Lab 3</Text>
       </Pressable>
+      <Pressable onPress={() => router.push(`/lab4`)}>
+        <Text style={styles.listTitle}>Lab 4</Text>
+      </Pressable>
       
       <StatusBar style="auto" />
     </View>
