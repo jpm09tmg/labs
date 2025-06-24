@@ -1,48 +1,60 @@
-// Define the structure of a vacation destination
+// lib/vacationDestinations.ts
 export interface VacationDestination {
   id: number;
-  location: string;
-  price: number; // Changed to a numeric value for actual prices
-  average_yearly_temperature: string;
+  location: string; // Changed from city/country to location to match your existing code
+  price: number;
+  averageYearlyTemperature: number;
 }
 
-// Define the array with explicit typing and actual prices in USD
 const vacationDestinations: VacationDestination[] = [
-  { id: 1, location: "Paris", price: 2500, average_yearly_temperature: "15°C" },
-  { id: 2, location: "Tokyo", price: 1800, average_yearly_temperature: "16°C" },
+  {
+    id: 1,
+    location: "Paris, France",
+    price: 1200,
+    averageYearlyTemperature: 12
+  },
+  {
+    id: 2,
+    location: "Tokyo, Japan",
+    price: 1500,
+    averageYearlyTemperature: 16
+  },
   {
     id: 3,
-    location: "New York City",
-    price: 2200,
-    average_yearly_temperature: "13°C",
+    location: "New York, USA",
+    price: 1100,
+    averageYearlyTemperature: 13
   },
   {
     id: 4,
-    location: "Sydney",
-    price: 2700,
-    average_yearly_temperature: "20°C",
+    location: "Sydney, Australia",
+    price: 1400,
+    averageYearlyTemperature: 18
   },
   {
     id: 5,
-    location: "Cape Town",
-    price: 1600,
-    average_yearly_temperature: "18°C",
+    location: "London, United Kingdom",
+    price: 1000,
+    averageYearlyTemperature: 10
   },
   {
     id: 6,
-    location: "Rio de Janeiro",
-    price: 1900,
-    average_yearly_temperature: "24°C",
+    location: "Rome, Italy",
+    price: 900,
+    averageYearlyTemperature: 16
   },
   {
     id: 7,
-    location: "Barcelona",
-    price: 2000,
-    average_yearly_temperature: "17°C",
+    location: "Barcelona, Spain",
+    price: 800,
+    averageYearlyTemperature: 17
   },
-  { id: 8, location: "Dubai", price: 3000, average_yearly_temperature: "27°C" },
-  { id: 9, location: "Bali", price: 1500, average_yearly_temperature: "28°C" },
-  { id: 10, location: "Rome", price: 2100, average_yearly_temperature: "18°C" },
+  {
+    id: 8,
+    location: "Dubai, UAE",
+    price: 1300,
+    averageYearlyTemperature: 28
+  }
 ];
 
 export default vacationDestinations;
