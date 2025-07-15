@@ -1,62 +1,24 @@
-import supabase from "./supabase";
-import { Inventory } from "./object_types";
+// lib/supabase_crud.ts
+import { supabase } from './supabase'
 
-const table_name = "sampledatabase";
+const TABLE = 'sampledatabase'
 
-export async function getAllRows() {
-  const { data, error } = await supabase.from(table_name).select("*");
-
-  if (error) {
-    console.error("Error fetching items:", error);
-    throw error;
-  }
-  console.log(data);
-  return data;
+// CREATE
+export async function createUser(name: string, email: string) {
+  return await supabase.from(TABLE).insert([{ name, email }])
 }
 
-export async function getItemById(id: number) {
-  const { data, error } = await supabase
-    .from(table_name)
-    .select("*")
-    .eq("id", id)
-    .single();
-
-  if (error) {
-    console.error(`Error fetching item with ID ${id}:`, error);
-    throw error;
-  }
-  return data;
+// READ
+export async function getUsers() {
+  return await supabase.from(TABLE).select('*')
 }
 
-export async function addItem(item: Inventory) {
-  const { data, error } = await supabase.from(table_name).insert([item]);
-
-  if (error) {
-    console.error("Error adding item:", error);
-    throw error;
-  }
-  return data;
+// UPDATE
+export async function updateUser(id: number, newData: { name?: string; email?: string }) {
+  return await supabase.from(TABLE).update(newData).eq('id', id)
 }
 
-export async function updateItem(id: number, item: Inventory) {
-  const { data, error } = await supabase
-    .from(table_name)
-    .update(item)
-    .eq("id", id);
-
-  if (error) {
-    console.error(`Error updating item with ID ${id}:`, error);
-    throw error;
-  }
-  return data;
-}
-
-export async function deleteItem(id: number) {
-  const { data, error } = await supabase.from(table_name).delete().eq("id", id);
-
-  if (error) {
-    console.error(`Error deleting item with ID ${id}:`, error);
-    throw error;
-  }
-  return data;
+// DELETE
+export async function deleteUser(id: number) {
+  return await supabase.from(TABLE).delete().eq('id', id)
 }
