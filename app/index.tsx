@@ -2,6 +2,7 @@ import { View, Text, Button, StyleSheet, Pressable } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import FruitList from '../components/list';
 import { useRouter } from "expo-router";
+import { getAllRows } from '../lib/supabase_crud';
 
 export default function App() {
 
@@ -20,7 +21,7 @@ const router = useRouter();
       <Pressable onPress={() => router.push(`/lab4`)}>
         <Text style={styles.listTitle}>Lab 4</Text>
       </Pressable>
-      
+      {}
       <StatusBar style="auto" />
     </View>
   );
