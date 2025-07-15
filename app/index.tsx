@@ -21,8 +21,15 @@ const router = useRouter();
       <Pressable onPress={() => router.push(`/lab4`)}>
         <Text style={styles.listTitle}>Lab 4</Text>
       </Pressable>
-      {}
       <StatusBar style="auto" />
+      <Button title="Fetch All Rows" onPress={async () => {
+        try {
+          const rows = await getAllRows();
+          console.log(rows);
+        } catch (error) {
+          console.error("Error fetching rows:", error);
+        }
+      }} />
     </View>
   );
 }
